@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Test"){
             steps{
-                sh 'test -f public/**'
+                sh 'grep index.html public/'
                 sh 'npm test -a'
             }
         }
