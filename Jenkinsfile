@@ -20,14 +20,15 @@ pipeline {
                 '''
             }
         }
-        stage("Test"){
+
+        stage("Test") {
             agent {
                 docker {
                     image 'node:18-alpine'
                     reuseNode true
                 }
-                
-            steps{
+
+            steps {
                 sh 'test -f public/index.html'
                 sh 'npm test'
             }
